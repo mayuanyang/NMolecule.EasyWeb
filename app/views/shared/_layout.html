@@ -1,0 +1,42 @@
+<div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ui-sref="root.home">印刷报价系统</a>              
+            </div>           
+        </div>         
+    </nav>
+    
+
+    
+    <div class="container">
+        
+         <div class = "notification fixed-top">
+                <div ng-repeat="item in $root.errorMessages track by $index" class="alert alert-{{item.type}} fade in" role="alert"> 
+
+                    <!--<a href="#" class="close" data-dismiss="alert" ng-click="$root.errorMessages.splice($index, 1)">x</a>-->                
+                    <div class = "closeAlert pull right ">                
+                        <button type = "btn btn-info btn-block" class = "close" data-dismiss = "alert"  ng-click="$root.errorMessages.splice($index, 1)" aria-hidden = "true">                                        
+                                <i class="glyphicon glyphicon-remove-sign custom"></i>
+                        </button>
+                    </div>
+                    <div class = "content">
+                        <span>{{item.message}}</span>
+                    </div>
+                </div>                
+         </div>
+    
+		<div class="main">
+ 
+            <div cg-busy="{promise:$root.myPromise,message:'Loading',minDuration:100}">
+                <ui-view/>
+            </div>
+		</div>
+	</div>
+</div>

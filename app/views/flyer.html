@@ -1,0 +1,27 @@
+<br>
+<div class="col-sm-6 col-md-offset-2">
+		<div class="panel-heading"><h3>专版单张</h3></div>
+		<div class="panel-body">
+			<div class="miscellaneousDishonours">
+				<form class="form-horizontal" name="flyerForm" novalidate>
+					
+					
+					<div class="form-group">
+						<label for="inputRemark" class="col-sm-2 control-label">Remark</label>
+						<div class="col-sm-8" ng-class="{'has-error':flyerForm.inputRemark.$invalid}">
+							<input type="text" class="form-control" ng-model="model.name" id="inputRemark" name="inputRemark" placeholder="Remark" ng-maxlength="200" maxlength="200" 
+								ng-required="true"></input>
+						</div>
+					</div>
+					<hr>
+					<div class="col-md-10">
+						<div>
+							<button class="btn btn-primary pull-right" ng-click="model.doSomeWork()" 
+								ng-disabled="flyerForm.$invalid">&nbsp;Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
